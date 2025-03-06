@@ -12,9 +12,7 @@ for i = 1:length(Nx_values)
     Nx = Nx_values(i);
     dx = L / (Nx - 1);
     x_numerical = linspace(0, L, Nx);
-    
     c_numerical = numericalSolutionFTCS(Nx, dt, dx, D, t_final);
-    
     % Calculate analytical solution for each point in x_numerical at t_final
     C_analytical = zeros(Nx, 1); % Initialize
     for j = 1:Nx
@@ -36,6 +34,7 @@ for i = 2:length(Nx_values)
     orders_L2(i-1) = log(error_norms_L2(i-1) / error_norms_L2(i)) / log(dx_i / dx_ip1);
     orders_LInf(i-1) = log(error_norms_LInf(i-1) / error_norms_LInf(i)) / log(dx_i / dx_ip1);
 end
+
 % Display the results, including the calculated orders of accuracy
 disp('Nx     L1 Norm         L2 Norm         L∞ Norm        Order L1     Order L2     Order L∞');
 for i = 1:length(Nx_values)

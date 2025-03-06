@@ -14,7 +14,7 @@ for i = 1:length(Nx_values)
     dx = L / (Nx - 1);
     x_numerical = linspace(0, L, Nx);
     c_numerical = numericalSolutionFTCS(Nx, dt, dx, D, t_final);
-    plot(x_numerical, c_numerical, colors(i), 'LineWidth', 1);
+    plot(x_numerical, c_numerical, 'LineWidth', 1);
 end
 
 % Plot the analytical solution

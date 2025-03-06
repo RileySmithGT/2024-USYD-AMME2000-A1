@@ -13,7 +13,7 @@ hold on;
 for i = 1:length(time_hours)
     t_final = time_hours(i) * 3600; % Convert hours to seconds
     c_numerical = numericalSolutionFTCS(Nx, dt, dx, D, t_final);
-    plot(x_numerical, c_numerical, colors(i), 'LineWidth', 1, 'DisplayName', sprintf('%d hours', time_hours(i)));
+    plot(x_numerical, c_numerical, 'LineWidth', 1, 'DisplayName', sprintf('%d hours', time_hours(i)));
 end
 
 % Formatting the plot
